@@ -13,13 +13,14 @@ import { skillGroups } from "../data/skills";
   description="Ralph Jerome T. Yu is an aspiring web developer focused on web development, technical support, and practical digital solutions."
 >
   <section id="home" aria-labelledby="home-heading" class="hero-technical scroll-mt-28 border-b border-[var(--color-border)]">
-    <div class="relative z-10 mx-auto grid min-h-[calc(100vh-9rem)] max-w-6xl items-center gap-12 px-[var(--space-page-x)] py-[var(--space-section-y)] sm:px-6 lg:grid-cols-[1.15fr_0.85fr] lg:px-8 lg:py-28">
-      <div class="hero-copy">
-        <p class="text-sm font-semibold tracking-[0.22em] text-[var(--color-accent)] uppercase">Portfolio</p>
-        <h1 id="home-heading" class="mt-5 max-w-4xl text-4xl font-bold text-[var(--color-text-primary)] sm:text-6xl">
-          Ralph Jerome T. Yu
+    <div class="relative z-10 mx-auto grid min-h-[calc(100vh-9rem)] max-w-6xl items-center gap-10 px-[var(--space-page-x)] py-[var(--space-section-y)] sm:px-6 lg:grid-cols-[minmax(0,1fr)_9rem] lg:px-8 lg:py-28">
+      <div class="hero-copy max-w-5xl">
+        <p class="hero-label">01 / portfolio.ts</p>
+        <h1 id="home-heading" class="mt-6 max-w-5xl text-5xl font-extrabold leading-none tracking-normal text-[var(--color-text-primary)] sm:text-7xl lg:text-8xl xl:text-9xl">
+          Ralph <br class="sm:hidden" />Jerome
+          <span class="block">T. Yu</span>
         </h1>
-        <p class="mt-5 text-2xl font-semibold text-[var(--color-text-secondary)] sm:text-3xl">
+        <p class="mt-6 text-xl font-semibold text-[var(--color-text-secondary)] sm:text-2xl lg:text-3xl">
           Aspiring Web Developer
         </p>
         <p class="mt-6 max-w-2xl text-lg leading-8 text-[var(--color-text-secondary)]">
@@ -44,31 +45,12 @@ import { skillGroups } from "../data/skills";
             aria-label="Download Ralph Jerome T. Yu's resume as a PDF"
             class="inline-flex items-center justify-center rounded-md border border-[var(--color-border)] bg-[var(--color-surface)] px-5 py-3 text-sm font-semibold text-[var(--color-text-primary)] transition hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)]"
           >
-            Download Resume
+            Resume / PDF
           </a>
         </div>
       </div>
 
-      <aside
-        aria-label="Portfolio summary"
-        class="hero-summary rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] p-6 shadow-sm"
-      >
-        <div class="hero-summary__mark" aria-hidden="true">RY</div>
-        <dl class="grid gap-5">
-          <div>
-            <dt class="text-sm font-semibold tracking-[0.16em] text-[var(--color-accent)] uppercase">Goal</dt>
-            <dd class="mt-2 text-lg font-semibold text-[var(--color-text-primary)]">Land a tech support job</dd>
-          </div>
-          <div class="border-t border-[var(--color-border)] pt-5">
-            <dt class="text-sm font-semibold tracking-[0.16em] text-[var(--color-accent)] uppercase">Audience</dt>
-            <dd class="mt-2 text-lg font-semibold text-[var(--color-text-primary)]">Recruiters and clients</dd>
-          </div>
-          <div class="border-t border-[var(--color-border)] pt-5">
-            <dt class="text-sm font-semibold tracking-[0.16em] text-[var(--color-accent)] uppercase">Focus</dt>
-            <dd class="mt-2 text-lg font-semibold text-[var(--color-text-primary)]">Web development fundamentals and support-ready communication</dd>
-          </div>
-        </dl>
-      </aside>
+      <div class="hero-signature" aria-hidden="true">RY</div>
     </div>
   </section>
 
