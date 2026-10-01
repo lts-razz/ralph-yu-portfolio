@@ -55,28 +55,31 @@ import { skillGroups } from "../data/skills";
   </section>
 
   <section id="about" aria-labelledby="about-heading" class="scroll-mt-28 bg-[var(--color-surface)]">
-    <div class="mx-auto grid max-w-6xl gap-10 px-[var(--space-page-x)] py-[var(--space-section-y)] sm:px-6 lg:grid-cols-[0.8fr_1.2fr] lg:px-8">
-      <SectionHeading
-        eyebrow="About"
-        marker="01"
-        headingId="about-heading"
-        title="A practical portfolio from an aspiring web developer."
-        description="Ralph Jerome T. Yu is an aspiring web developer and a passionate, hardworking individual. He values loyalty and collaboration as a teammate, and he keeps learning through hands-on problem solving."
-      />
+    <div class="mx-auto grid max-w-6xl gap-8 px-[var(--space-page-x)] py-16 sm:px-6 sm:py-[var(--space-section-y)] md:gap-10 lg:grid-cols-[minmax(8rem,0.34fr)_minmax(0,0.66fr)] lg:px-8">
+      <p class="font-mono text-xs font-semibold leading-6 tracking-[0.08em] text-[var(--color-accent)] sm:text-sm lg:pt-2">
+        01 / About
+      </p>
 
-      <div class="grid gap-4 sm:grid-cols-2">
-        <div class="rounded-lg border border-[var(--color-border)] bg-[var(--color-background)] p-6">
-          <h3 class="text-lg font-bold text-[var(--color-text-primary)]">Web Development Direction</h3>
-          <p class="mt-3 leading-7 text-[var(--color-text-secondary)]">
-            Focused on growing as an aspiring web developer through practical projects and steady skill-building.
+      <div class="max-w-3xl">
+        <h2 id="about-heading" class="text-4xl font-extrabold leading-tight tracking-normal text-[var(--color-text-primary)] sm:text-5xl lg:text-6xl">
+          I start with the problem, then build outward.
+        </h2>
+        <div class="mt-8 max-w-2xl space-y-5 text-base leading-8 text-[var(--color-text-secondary)] sm:text-lg sm:leading-9">
+          <p>
+            I&rsquo;m most interested in projects that make a process easier to follow or information easier to find.
+            The web applications I build usually begin with a real workflow&mdash;something that needs to be
+            organized, explained, or made easier to use.
+          </p>
+          <p>
+            I learn through the work itself: building a first version, troubleshooting what does not hold together,
+            and refining the result. That process connects my interest in web development with practical technical
+            problem solving, while keeping an eye on both how a system functions and how a person experiences it.
           </p>
         </div>
-        <div class="rounded-lg border border-[var(--color-border)] bg-[var(--color-background)] p-6">
-          <h3 class="text-lg font-bold text-[var(--color-text-primary)]">Hands-On Learning</h3>
-          <p class="mt-3 leading-7 text-[var(--color-text-secondary)]">
-            Develops technical repair and freelancing skills through hands-on problem solving.
-          </p>
-        </div>
+        <div class="mt-8 h-px w-full max-w-2xl bg-[var(--color-technical-line)]" aria-hidden="true"></div>
+        <p class="mt-5 max-w-2xl font-mono text-xs font-semibold leading-6 tracking-[0.08em] text-[var(--color-text-secondary)] sm:text-sm">
+          WORKING METHOD / understand &rarr; build &rarr; troubleshoot &rarr; refine
+        </p>
       </div>
     </div>
   </section>
