@@ -1,11 +1,12 @@
 ---
+import type { Project } from "../data/projects";
+
 interface Props {
-  title: string;
-  description: string;
-  focus: string;
+  project: Project;
 }
 
-const { title, description, focus } = Astro.props;
+const { project } = Astro.props;
+const { title, description, features, repositoryUrl } = project;
 ---
 
 <article class="flex h-full flex-col rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] p-6 shadow-sm transition hover:-translate-y-1 hover:border-[var(--color-accent)] hover:shadow-md">
@@ -14,7 +15,29 @@ const { title, description, focus } = Astro.props;
   </div>
   <h3 class="text-xl font-bold text-[var(--color-text-primary)]">{title}</h3>
   <p class="mt-4 flex-1 leading-7 text-[var(--color-text-secondary)]">{description}</p>
-  <p class="mt-6 border-t border-[var(--color-border)] pt-4 text-sm font-semibold text-[var(--color-text-primary)]">
-    Focus: <span class="font-medium text-[var(--color-text-secondary)]">{focus}</span>
-  </p>
+  {
+    features && (
+      <div class="mt-6 border-t border-[var(--color-border)] pt-4">
+        <h4 class="text-sm font-semibold text-[var(--color-text-primary)]">Features</h4>
+        <ul class="mt-3 grid gap-2 text-sm text-[var(--color-text-secondary)]">
+          {features.map((feature) => (
+            <li>{feature}</li>
+          ))}
+        </ul>
+      </div>
+    )
+  }
+  {
+    repositoryUrl && (
+      <a
+        href={repositoryUrl}
+        class="mt-6 inline-flex font-semibold text-[var(--color-accent)] transition hover:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)]"
+        target="_blank"
+        rel="noreferrer"
+        aria-label={`View GitHub repository for ${title}`}
+      >
+        View repository
+      </a>
+    )
+  }
 </article>
