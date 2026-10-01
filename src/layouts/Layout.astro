@@ -10,8 +10,21 @@ interface Props {
 
 const {
   title = "Ralph Jerome T. Yu — Aspiring Web Developer",
-  description = "Portfolio of Ralph Jerome T. Yu, an aspiring web developer focused on technical support, web development, and practical digital solutions.",
+  description = "Ralph Jerome T. Yu is an aspiring web developer focused on web development, technical support, and practical digital solutions.",
 } = Astro.props;
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Ralph Jerome T. Yu",
+  jobTitle: "Aspiring Web Developer",
+  sameAs: ["https://github.com/lts-razz"],
+  owns: {
+    "@type": "Organization",
+    name: "DiBaITKa",
+    url: "https://www.facebook.com/DiBaITKa",
+  },
+};
 ---
 
 <!doctype html>
@@ -21,7 +34,14 @@ const {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="profile" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="theme-color" content="#f8fafc" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0b1220" media="(prefers-color-scheme: dark)" />
     <title>{title}</title>
+    <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
     <script is:inline>
       (() => {
         let storedTheme = null;

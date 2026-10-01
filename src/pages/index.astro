@@ -3,12 +3,14 @@ import Layout from "../layouts/Layout.astro";
 import ContactLink from "../components/ContactLink.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import SectionHeading from "../components/SectionHeading.astro";
+import SkillGroup from "../components/SkillGroup.astro";
 import { projects } from "../data/projects";
+import { skillGroups } from "../data/skills";
 ---
 
 <Layout
   title="Ralph Jerome T. Yu — Aspiring Web Developer"
-  description="Portfolio of Ralph Jerome T. Yu, an aspiring web developer focused on technical support, web development, and practical digital solutions."
+  description="Ralph Jerome T. Yu is an aspiring web developer focused on web development, technical support, and practical digital solutions."
 >
   <section id="home" aria-labelledby="home-heading" class="scroll-mt-28 border-b border-[var(--color-border)]">
     <div class="mx-auto grid min-h-[calc(100vh-9rem)] max-w-6xl items-center gap-12 px-[var(--space-page-x)] py-[var(--space-section-y)] sm:px-6 lg:grid-cols-[1.15fr_0.85fr] lg:px-8 lg:py-28">
@@ -83,6 +85,21 @@ import { projects } from "../data/projects";
             Develops technical repair and freelancing skills through hands-on problem solving.
           </p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" aria-labelledby="skills-heading" class="scroll-mt-28">
+    <div class="mx-auto max-w-6xl px-[var(--space-page-x)] py-[var(--space-section-y)] sm:px-6 lg:px-8">
+      <SectionHeading
+        eyebrow="Skills"
+        headingId="skills-heading"
+        title="Technical skills Ralph is building with."
+        description="A focused stack for building practical web applications, from typed frontend interfaces to backend services, databases, version control, and deployment."
+      />
+
+      <div class="mt-10 grid gap-6 md:grid-cols-2">
+        {skillGroups.map((group) => <SkillGroup group={group} />)}
       </div>
     </div>
   </section>
