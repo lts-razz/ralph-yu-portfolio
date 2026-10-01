@@ -1,0 +1,31 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+  title="Page Not Found | Ralph Jerome T. Yu"
+  description="The requested page could not be found on Ralph Jerome T. Yu's portfolio website."
+>
+  <section aria-labelledby="not-found-heading" class="border-b border-[var(--color-border)]">
+    <div class="mx-auto grid min-h-[calc(100vh-14rem)] max-w-6xl place-items-center px-[var(--space-page-x)] py-[var(--space-section-y)] text-center sm:px-6 lg:px-8">
+      <div class="max-w-2xl">
+        <p class="text-sm font-semibold tracking-[0.22em] text-[var(--color-accent)] uppercase">Not Found</p>
+        <h1 id="not-found-heading" class="mt-5 text-6xl font-bold text-[var(--color-text-primary)] sm:text-7xl">
+          404
+        </h1>
+        <p class="mt-6 text-xl font-semibold text-[var(--color-text-secondary)] sm:text-2xl">
+          The requested page could not be found.
+        </p>
+        <p class="mt-4 text-base leading-7 text-[var(--color-text-secondary)] sm:text-lg">
+          The page may have moved, the address may be incorrect, or the content may no longer be available.
+        </p>
+        <a
+          href="/"
+          class="mt-8 inline-flex items-center justify-center rounded-md bg-[var(--color-accent)] px-5 py-3 text-sm font-semibold text-[var(--color-accent-foreground)] transition hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)]"
+        >
+          Return to homepage
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
