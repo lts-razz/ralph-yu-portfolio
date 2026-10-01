@@ -1,0 +1,20 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  focus: string;
+}
+
+const { title, description, focus } = Astro.props;
+---
+
+<article class="flex h-full flex-col rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] p-6 shadow-sm transition hover:-translate-y-1 hover:border-[var(--color-accent)] hover:shadow-md">
+  <div class="mb-5 flex size-12 items-center justify-center rounded-md bg-[var(--color-surface-elevated)] text-lg font-bold text-[var(--color-accent)]">
+    {title.split(" ").slice(0, 2).map((word) => word[0]).join("")}
+  </div>
+  <h3 class="text-xl font-bold text-[var(--color-text-primary)]">{title}</h3>
+  <p class="mt-4 flex-1 leading-7 text-[var(--color-text-secondary)]">{description}</p>
+  <p class="mt-6 border-t border-[var(--color-border)] pt-4 text-sm font-semibold text-[var(--color-text-primary)]">
+    Focus: <span class="font-medium text-[var(--color-text-secondary)]">{focus}</span>
+  </p>
+</article>

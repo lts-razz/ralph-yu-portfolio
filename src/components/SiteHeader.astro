@@ -1,0 +1,65 @@
+---
+const navLinks = [
+  { href: "#home", label: "Home" },
+  { href: "#about", label: "About" },
+  { href: "#projects", label: "Projects" },
+  { href: "#contact", label: "Contact" },
+];
+---
+
+<header class="sticky top-0 z-50 border-b border-[var(--color-border)] bg-[color-mix(in_srgb,var(--color-background)_90%,transparent)] backdrop-blur">
+  <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
+    <a
+      href="#home"
+      class="text-sm font-semibold tracking-[0.18em] text-[var(--color-text-primary)] uppercase"
+      aria-label="Ralph Jerome T. Yu portfolio home"
+    >
+      RJTY
+    </a>
+
+    <nav aria-label="Primary navigation" class="hidden items-center gap-1 sm:flex">
+      {
+        navLinks.map((link) => (
+          <a
+            href={link.href}
+            class="rounded-md px-3 py-2 text-sm font-medium text-[var(--color-text-secondary)] transition hover:bg-[var(--color-surface-elevated)] hover:text-[var(--color-text-primary)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)]"
+          >
+            {link.label}
+          </a>
+        ))
+      }
+    </nav>
+
+    <button
+      type="button"
+      data-theme-toggle
+      class="inline-flex h-10 items-center gap-2 rounded-md border border-[var(--color-border)] bg-[var(--color-surface)] px-3 text-sm font-semibold text-[var(--color-text-primary)] transition hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)]"
+      aria-label="Switch color mode"
+      aria-pressed="false"
+    >
+      <span
+        data-theme-icon
+        aria-hidden="true"
+        class="grid size-5 place-items-center rounded-sm bg-[var(--color-surface-elevated)] text-xs font-bold text-[var(--color-accent)]"
+      >
+        L
+      </span>
+      <span data-theme-label>Light</span>
+    </button>
+  </div>
+
+  <nav aria-label="Mobile navigation" class="border-t border-[var(--color-border)] px-4 py-2 sm:hidden">
+    <div class="mx-auto grid max-w-6xl grid-cols-4 gap-1">
+      {
+        navLinks.map((link) => (
+          <a
+            href={link.href}
+            class="rounded-md px-2 py-2 text-center text-xs font-medium text-[var(--color-text-secondary)] transition hover:bg-[var(--color-surface-elevated)] hover:text-[var(--color-text-primary)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)]"
+          >
+            {link.label}
+          </a>
+        ))
+      }
+    </div>
+  </nav>
+</header>

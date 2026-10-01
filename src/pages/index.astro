@@ -1,17 +1,129 @@
 ---
-import '../styles/global.css' 
+import Layout from "../layouts/Layout.astro";
+import ContactLink from "../components/ContactLink.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+
+const projects = [
+  {
+    title: "Woodberry Resort and Events Booking and Management System",
+    description:
+      "A booking and management system concept for organizing resort reservations and event-related workflows in one web experience.",
+    focus: "Reservation flow, management screens, and practical web application structure",
+  },
+  {
+    title: "Lost and Found Website for Local Schools",
+    description:
+      "A school-focused lost and found website concept designed to help students and staff report, browse, and recover misplaced items.",
+    focus: "Clear reporting, searchable information, and community support",
+  },
+];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout>
+  <section id="home" class="scroll-mt-28 border-b border-[var(--color-border)]">
+    <div class="mx-auto grid min-h-[calc(100vh-9rem)] max-w-6xl items-center gap-12 px-[var(--space-page-x)] py-[var(--space-section-y)] sm:px-6 lg:grid-cols-[1.15fr_0.85fr] lg:px-8 lg:py-28">
+      <div>
+        <p class="text-sm font-semibold tracking-[0.22em] text-[var(--color-accent)] uppercase">Portfolio</p>
+        <h1 class="mt-5 max-w-4xl text-4xl font-bold text-[var(--color-text-primary)] sm:text-6xl">
+          Ralph Jerome T. Yu
+        </h1>
+        <p class="mt-5 text-2xl font-semibold text-[var(--color-text-secondary)] sm:text-3xl">
+          Aspiring Web Developer
+        </p>
+        <p class="mt-6 max-w-2xl text-lg leading-8 text-[var(--color-text-secondary)]">
+          Building a clean technical path toward a tech support role, with practical web projects for recruiters and clients to review.
+        </p>
+        <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+          <a
+            href="#projects"
+            class="inline-flex items-center justify-center rounded-md bg-[var(--color-accent)] px-5 py-3 text-sm font-semibold text-white transition hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)]"
+          >
+            View Projects
+          </a>
+          <a
+            href="#contact"
+            class="inline-flex items-center justify-center rounded-md border border-[var(--color-border)] bg-[var(--color-surface)] px-5 py-3 text-sm font-semibold text-[var(--color-text-primary)] transition hover:border-[var(--color-accent)] hover:text-[var(--color-accent)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)]"
+          >
+            Contact Ralph
+          </a>
+        </div>
+      </div>
+
+      <aside
+        aria-label="Portfolio summary"
+        class="rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] p-6 shadow-sm"
+      >
+        <dl class="grid gap-5">
+          <div>
+            <dt class="text-sm font-semibold tracking-[0.16em] text-[var(--color-accent)] uppercase">Goal</dt>
+            <dd class="mt-2 text-lg font-semibold text-[var(--color-text-primary)]">Land a tech support job</dd>
+          </div>
+          <div class="border-t border-[var(--color-border)] pt-5">
+            <dt class="text-sm font-semibold tracking-[0.16em] text-[var(--color-accent)] uppercase">Audience</dt>
+            <dd class="mt-2 text-lg font-semibold text-[var(--color-text-primary)]">Recruiters and clients</dd>
+          </div>
+          <div class="border-t border-[var(--color-border)] pt-5">
+            <dt class="text-sm font-semibold tracking-[0.16em] text-[var(--color-accent)] uppercase">Focus</dt>
+            <dd class="mt-2 text-lg font-semibold text-[var(--color-text-primary)]">Web development fundamentals and support-ready communication</dd>
+          </div>
+        </dl>
+      </aside>
+    </div>
+  </section>
+
+  <section id="about" class="scroll-mt-28 bg-[var(--color-surface)]">
+    <div class="mx-auto grid max-w-6xl gap-10 px-[var(--space-page-x)] py-[var(--space-section-y)] sm:px-6 lg:grid-cols-[0.8fr_1.2fr] lg:px-8">
+      <SectionHeading
+        eyebrow="About"
+        title="A practical portfolio for technical support opportunities."
+        description="Ralph Jerome T. Yu is an aspiring web developer preparing for a tech support role. This portfolio highlights clear communication, structured web pages, and project thinking that is useful for recruiter and client conversations."
+      />
+
+      <div class="grid gap-4 sm:grid-cols-2">
+        <div class="rounded-lg border border-[var(--color-border)] bg-[var(--color-background)] p-6">
+          <h3 class="text-lg font-bold text-[var(--color-text-primary)]">Professional Direction</h3>
+          <p class="mt-3 leading-7 text-[var(--color-text-secondary)]">
+            Focused on building a foundation in web development while pursuing a tech support job.
+          </p>
+        </div>
+        <div class="rounded-lg border border-[var(--color-border)] bg-[var(--color-background)] p-6">
+          <h3 class="text-lg font-bold text-[var(--color-text-primary)]">Portfolio Approach</h3>
+          <p class="mt-3 leading-7 text-[var(--color-text-secondary)]">
+            Presents work in a direct, accessible format so recruiters and clients can quickly understand the project purpose.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="scroll-mt-28">
+    <div class="mx-auto max-w-6xl px-[var(--space-page-x)] py-[var(--space-section-y)] sm:px-6 lg:px-8">
+      <SectionHeading
+        eyebrow="Projects"
+        title="Featured web projects"
+        description="Two portfolio projects centered on practical services: booking management for a resort and a school lost and found experience."
+      />
+
+      <div class="mt-10 grid gap-6 md:grid-cols-2">
+        {projects.map((project) => <ProjectCard {...project} />)}
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="scroll-mt-28 bg-[var(--color-surface)]">
+    <div class="mx-auto max-w-6xl px-[var(--space-page-x)] py-[var(--space-section-y)] sm:px-6 lg:px-8">
+      <SectionHeading
+        eyebrow="Contact"
+        title="Get in touch with Ralph."
+        description="For recruiter conversations, client inquiries, or tech support opportunities, use the links below."
+      />
+
+      <div class="mt-10 grid gap-4 md:grid-cols-3">
+        <ContactLink href="mailto:yuralphjerome@gmail.com" label="Email" value="yuralphjerome@gmail.com" />
+        <ContactLink href="tel:09994408356" label="Phone" value="0999-440-8356" />
+        <ContactLink href="https://github.com/lts-razz" label="GitHub" value="github.com/lts-razz" external />
+      </div>
+    </div>
+  </section>
+</Layout>

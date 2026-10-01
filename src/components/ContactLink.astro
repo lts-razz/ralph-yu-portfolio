@@ -1,0 +1,20 @@
+---
+interface Props {
+  href: string;
+  label: string;
+  value: string;
+  external?: boolean;
+}
+
+const { href, label, value, external = false } = Astro.props;
+---
+
+<a
+  href={href}
+  class="group flex flex-col gap-2 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] p-5 transition hover:-translate-y-1 hover:border-[var(--color-accent)] hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)]"
+  target={external ? "_blank" : undefined}
+  rel={external ? "noreferrer" : undefined}
+>
+  <span class="text-sm font-semibold tracking-[0.16em] text-[var(--color-accent)] uppercase">{label}</span>
+  <span class="break-words text-lg font-semibold text-[var(--color-text-primary)] group-hover:text-[var(--color-accent)]">{value}</span>
+</a>

@@ -1,0 +1,105 @@
+---
+import "../styles/global.css";
+import SiteHeader from "../components/SiteHeader.astro";
+import Footer from "../components/Footer.astro";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Ralph Jerome T. Yu | Aspiring Web Developer",
+  description = "Professional portfolio for Ralph Jerome T. Yu, an aspiring web developer focused on tech support opportunities.",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    <script is:inline>
+      (() => {
+        let storedTheme = null;
+        try {
+          storedTheme = localStorage.getItem("theme");
+        } catch {
+          storedTheme = null;
+        }
+        const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        document.documentElement.dataset.theme = storedTheme || systemTheme;
+      })();
+    </script>
+  </head>
+  <body class="min-h-screen bg-[var(--color-background)] text-[var(--color-text-primary)] antialiased">
+    <SiteHeader />
+    <main id="main-content">
+      <slot />
+    </main>
+    <Footer />
+    <script>
+      const themeToggle = document.querySelector<HTMLButtonElement>("[data-theme-toggle]");
+      const themeLabel = document.querySelector<HTMLElement>("[data-theme-label]");
+      const themeIcon = document.querySelector<HTMLElement>("[data-theme-icon]");
+      const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+
+      const readStoredTheme = () => {
+        try {
+          return localStorage.getItem("theme");
+        } catch {
+          return null;
+        }
+      };
+
+      const saveTheme = (theme: string) => {
+        try {
+          localStorage.setItem("theme", theme);
+        } catch {
+          return;
+        }
+      };
+
+      const getTheme = () => document.documentElement.dataset.theme || (mediaQuery.matches ? "dark" : "light");
+
+      const updateToggle = () => {
+        const theme = getTheme();
+        const nextTheme = theme === "dark" ? "light" : "dark";
+
+        if (themeToggle) {
+          themeToggle.setAttribute("aria-label", `Switch to ${nextTheme} mode`);
+          themeToggle.setAttribute("aria-pressed", String(theme === "dark"));
+        }
+
+        if (themeLabel) {
+          themeLabel.textContent = theme === "dark" ? "Dark" : "Light";
+        }
+
+        if (themeIcon) {
+          themeIcon.textContent = theme === "dark" ? "D" : "L";
+        }
+      };
+
+      themeToggle?.addEventListener("click", () => {
+        const nextTheme = getTheme() === "dark" ? "light" : "dark";
+        document.documentElement.dataset.theme = nextTheme;
+        saveTheme(nextTheme);
+        updateToggle();
+      });
+
+      mediaQuery.addEventListener("change", (event) => {
+        if (readStoredTheme()) {
+          return;
+        }
+
+        document.documentElement.dataset.theme = event.matches ? "dark" : "light";
+        updateToggle();
+      });
+
+      updateToggle();
+    </script>
+  </body>
+</html>
