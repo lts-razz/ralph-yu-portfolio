@@ -12,9 +12,9 @@ const { href, label, value, external = false, ariaLabel } = Astro.props;
 
 <a
   href={href}
-  class="group flex flex-col gap-2 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] p-5 transition hover:-translate-y-1 hover:border-[var(--color-accent)] hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)]"
+  class="group flex flex-col gap-2 rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] p-5 transition motion-safe:hover:-translate-y-1 hover:border-[var(--color-accent)] hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)]"
   target={external ? "_blank" : undefined}
-  rel={external ? "noreferrer" : undefined}
+  rel={external ? "noopener noreferrer" : undefined}
   aria-label={ariaLabel}
 >
   <span class="text-sm font-semibold tracking-[0.16em] text-[var(--color-accent)] uppercase">{label}</span>

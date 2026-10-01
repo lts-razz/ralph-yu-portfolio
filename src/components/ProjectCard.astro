@@ -9,7 +9,7 @@ const { project } = Astro.props;
 const { title, description, features, repositoryUrl, liveUrl } = project;
 ---
 
-<article class="flex h-full flex-col rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] p-6 shadow-sm transition hover:-translate-y-1 hover:border-[var(--color-accent)] hover:shadow-md">
+<article class="flex h-full flex-col rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] p-6 shadow-sm transition motion-safe:hover:-translate-y-1 hover:border-[var(--color-accent)] hover:shadow-md">
   <div class="mb-5 flex size-12 items-center justify-center rounded-md bg-[var(--color-surface-elevated)] text-lg font-bold text-[var(--color-accent)]">
     {title.split(" ").slice(0, 2).map((word) => word[0]).join("")}
   </div>
@@ -30,7 +30,7 @@ const { title, description, features, repositoryUrl, liveUrl } = project;
   <div class="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
     <a
       href={liveUrl}
-      class="inline-flex items-center justify-center rounded-md bg-[var(--color-accent)] px-4 py-2 text-sm font-semibold text-white transition hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)]"
+      class="inline-flex items-center justify-center rounded-md bg-[var(--color-accent)] px-4 py-2 text-sm font-semibold text-[var(--color-accent-foreground)] transition hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)]"
       target="_blank"
       rel="noopener noreferrer"
       aria-label={`View live project for ${title}`}
@@ -43,7 +43,7 @@ const { title, description, features, repositoryUrl, liveUrl } = project;
           href={repositoryUrl}
           class="inline-flex items-center justify-center font-semibold text-[var(--color-accent)] transition hover:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)]"
           target="_blank"
-          rel="noreferrer"
+          rel="noopener noreferrer"
           aria-label={`View GitHub repository for ${title}`}
         >
           View repository
