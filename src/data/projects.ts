@@ -3,6 +3,7 @@ export interface Project {
   description: string;
   features?: string[];
   repositoryUrl?: string;
+  liveUrl: string;
 }
 
 export const projects: Project[] = [
@@ -17,9 +18,11 @@ export const projects: Project[] = [
       "Email/SMS notifications",
     ],
     repositoryUrl: "https://github.com/lts-razz/capstone-clone",
+    liveUrl: "https://capstone-clone-tan.vercel.app/",
   },
   {
     title: "Lost and Found Website for Local Schools",
     description: "A school-focused website for organizing and reporting lost-and-found items.",
+    liveUrl: "https://lost-and-found-website-azure.vercel.app/",
   },
 ];

@@ -6,7 +6,7 @@ interface Props {
 }
 
 const { project } = Astro.props;
-const { title, description, features, repositoryUrl } = project;
+const { title, description, features, repositoryUrl, liveUrl } = project;
 ---
 
 <article class="flex h-full flex-col rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] p-6 shadow-sm transition hover:-translate-y-1 hover:border-[var(--color-accent)] hover:shadow-md">
@@ -27,17 +27,28 @@ const { title, description, features, repositoryUrl } = project;
       </div>
     )
   }
-  {
-    repositoryUrl && (
-      <a
-        href={repositoryUrl}
-        class="mt-6 inline-flex font-semibold text-[var(--color-accent)] transition hover:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)]"
-        target="_blank"
-        rel="noreferrer"
-        aria-label={`View GitHub repository for ${title}`}
-      >
-        View repository
-      </a>
-    )
-  }
+  <div class="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+    <a
+      href={liveUrl}
+      class="inline-flex items-center justify-center rounded-md bg-[var(--color-accent)] px-4 py-2 text-sm font-semibold text-white transition hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)]"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={`View live project for ${title}`}
+    >
+      View Live Project
+    </a>
+    {
+      repositoryUrl && (
+        <a
+          href={repositoryUrl}
+          class="inline-flex items-center justify-center font-semibold text-[var(--color-accent)] transition hover:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent)]"
+          target="_blank"
+          rel="noreferrer"
+          aria-label={`View GitHub repository for ${title}`}
+        >
+          View repository
+        </a>
+      )
+    }
+  </div>
 </article>
