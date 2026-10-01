@@ -12,9 +12,9 @@ import { skillGroups } from "../data/skills";
   title="Ralph Jerome T. Yu — Aspiring Web Developer"
   description="Ralph Jerome T. Yu is an aspiring web developer focused on web development, technical support, and practical digital solutions."
 >
-  <section id="home" aria-labelledby="home-heading" class="scroll-mt-28 border-b border-[var(--color-border)]">
-    <div class="mx-auto grid min-h-[calc(100vh-9rem)] max-w-6xl items-center gap-12 px-[var(--space-page-x)] py-[var(--space-section-y)] sm:px-6 lg:grid-cols-[1.15fr_0.85fr] lg:px-8 lg:py-28">
-      <div>
+  <section id="home" aria-labelledby="home-heading" class="hero-technical scroll-mt-28 border-b border-[var(--color-border)]">
+    <div class="relative z-10 mx-auto grid min-h-[calc(100vh-9rem)] max-w-6xl items-center gap-12 px-[var(--space-page-x)] py-[var(--space-section-y)] sm:px-6 lg:grid-cols-[1.15fr_0.85fr] lg:px-8 lg:py-28">
+      <div class="hero-copy">
         <p class="text-sm font-semibold tracking-[0.22em] text-[var(--color-accent)] uppercase">Portfolio</p>
         <h1 id="home-heading" class="mt-5 max-w-4xl text-4xl font-bold text-[var(--color-text-primary)] sm:text-6xl">
           Ralph Jerome T. Yu
@@ -51,8 +51,9 @@ import { skillGroups } from "../data/skills";
 
       <aside
         aria-label="Portfolio summary"
-        class="rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] p-6 shadow-sm"
+        class="hero-summary rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] p-6 shadow-sm"
       >
+        <div class="hero-summary__mark" aria-hidden="true">RY</div>
         <dl class="grid gap-5">
           <div>
             <dt class="text-sm font-semibold tracking-[0.16em] text-[var(--color-accent)] uppercase">Goal</dt>
@@ -75,6 +76,7 @@ import { skillGroups } from "../data/skills";
     <div class="mx-auto grid max-w-6xl gap-10 px-[var(--space-page-x)] py-[var(--space-section-y)] sm:px-6 lg:grid-cols-[0.8fr_1.2fr] lg:px-8">
       <SectionHeading
         eyebrow="About"
+        marker="01"
         headingId="about-heading"
         title="A practical portfolio from an aspiring web developer."
         description="Ralph Jerome T. Yu is an aspiring web developer and a passionate, hardworking individual. He values loyalty and collaboration as a teammate, and he keeps learning through hands-on problem solving."
@@ -101,6 +103,7 @@ import { skillGroups } from "../data/skills";
     <div class="mx-auto max-w-6xl px-[var(--space-page-x)] py-[var(--space-section-y)] sm:px-6 lg:px-8">
       <SectionHeading
         eyebrow="Skills"
+        marker="02"
         headingId="skills-heading"
         title="Technical skills Ralph is building with."
         description="A focused stack for building practical web applications, from typed frontend interfaces to backend services, databases, version control, and deployment."
@@ -116,6 +119,7 @@ import { skillGroups } from "../data/skills";
     <div class="mx-auto max-w-6xl px-[var(--space-page-x)] py-[var(--space-section-y)] sm:px-6 lg:px-8">
       <SectionHeading
         eyebrow="Projects"
+        marker="03"
         headingId="projects-heading"
         title="Featured web projects"
         description="Two portfolio projects centered on practical services: booking management for a resort and a school lost and found experience."
@@ -131,6 +135,7 @@ import { skillGroups } from "../data/skills";
     <div class="mx-auto max-w-6xl px-[var(--space-page-x)] py-[var(--space-section-y)] sm:px-6 lg:px-8">
       <SectionHeading
         eyebrow="Contact"
+        marker="04"
         headingId="contact-heading"
         title="Get in touch with Ralph."
         description="For recruiter conversations, client inquiries, or tech support opportunities, use the links below."

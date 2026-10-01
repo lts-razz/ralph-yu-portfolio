@@ -143,7 +143,7 @@ export const skillGroups: SkillGroup[] = [
       },
       {
         name: "MySQL",
-        url: "https://dev.mysql.com/doc/",
+        url: "https://docs.oracle.com/cd/E17952_01/mysql-8.4-en/",
         color: "#4479a1",
         icon: "mysql",
       },
