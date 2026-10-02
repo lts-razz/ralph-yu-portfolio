@@ -5,8 +5,8 @@
 - Last updated: 2026-10-02
 - Repository: `lts-razz/ralph-yu-portfolio`
 - Live site: `https://ralph-yu-portfolio.vercel.app/`
-- Current phase: `03 / Projects`
-- Current status: Project direction, roles, repository facts, and technology stacks are approved. The implementation prompt is paused. No Projects implementation has been made from this phase yet.
+- Current phase: `Final production audit`
+- Current status: `04 / Contact` implementation was reviewed and approved in commit `9ddd2d2020513ecd52d13898206eca6ee14f9bf6`. Contact is now locked; the next phase is the final production audit.
 
 This file is the current source of truth for the portfolio’s intended design, approved content, section status, and project facts. GitHub `main` remains the source of truth for the current implementation. If the implementation and this file differ, identify the difference before changing it silently.
 
@@ -92,8 +92,8 @@ Do not change this numbering or use `03.01`-style numbering.
 | `00 / portfolio.ts` — Hero | Locked | Do not redesign or modify during normal future work. |
 | `01 / About` | Locked | Do not redesign or modify during normal future work. |
 | `02 / Skills` | Locked | Do not redesign or modify during normal future work. |
-| `03 / Projects` | Active / approved for implementation | Use the direction and facts below. Implementation has not started in this phase. |
-| `04 / Contact` | Pending | Conform to the established Technical Editorial language. |
+| `03 / Projects` | Locked | Implementation reviewed in commit `a66742794debe7bedc3d0602bf2242036ecf0fb2`; preserve during normal future work. |
+| `04 / Contact` | Locked | Implementation reviewed in commit `9ddd2d2020513ecd52d13898206eca6ee14f9bf6`; preserve during normal future work. |
 
 ## Locked section: `00 / portfolio.ts` — Hero
 
@@ -189,7 +189,7 @@ Use one editorial technical index rather than four cards with rounded technology
 - official documentation links
 - no rounded badge containers
 
-## Active section: `03 / Projects`
+## Locked section: `03 / Projects`
 
 ### Approved section direction
 
@@ -273,11 +273,68 @@ Do not reproduce sample names, phone numbers, email addresses, or other personal
 
 Do not force both projects into identical content lengths. Woodberry may contain more supporting detail because more information is documented. Lost & Found may remain shorter. This asymmetry should feel intentional.
 
-## Future work after Projects
+### Reviewed implementation
 
-After Projects is implemented and reviewed, likely remaining work is:
+- Commit: `a66742794debe7bedc3d0602bf2242036ecf0fb2` — `Redesign projects as editorial work bands`
+- Changed files: `src/components/ProjectCard.astro`, `src/data/projects.ts`, `src/pages/index.astro`, and `src/styles/global.css`
+- Review result: approved and locked
+- Confirmed: editorial bands, alternating desktop composition, logical mobile order, large screenshot evidence, thin borders, exact project links, roles, contribution areas, and visible technology metadata
+- Confirmed: Hero, About, Skills, and the root direction files were not changed by the implementation commit
+- Deployment signal: Vercel status passed; no GitHub Actions workflow run was reported for this commit
+- Live review: deployed Projects section rendered both screenshots, links, light/dark theme actions, semantic definition-list details, and no site runtime errors were observed
 
-- `04 / Contact`
+## Locked section: `04 / Contact`
+
+### Approved section direction
+
+Contact should close the page as a restrained editorial index: personal, direct, and easy to scan. Replace the older rounded contact cards with flat link rows, while preserving the established numbered margin, typography, spacing, themes, and accessibility behavior.
+
+### Approved content
+
+- Section marker: `04 / Contact`
+- Heading: `Get in touch with Ralph.`
+- Supporting copy: `For recruiter conversations, client inquiries, or tech support opportunities, use the links below.`
+- Email: `yuralphjerome@gmail.com` → `mailto:yuralphjerome@gmail.com`
+- Phone: `0999-440-8356` → `tel:09994408356`
+- GitHub: `github.com/lts-razz` → `https://github.com/lts-razz`
+- Freelance Business: `facebook.com/DiBaITKa` → `https://www.facebook.com/DiBaITKa`
+
+### Composition
+
+- Match the Skills and Projects section header language: left `04 / Contact` metadata and heading/supporting copy on the right at desktop widths.
+- Place the four contact links in a flat editorial index below the heading.
+- Use two columns on desktop and one column on mobile.
+- Each contact entry should be a full-row link with thin dividers, a small accent label, and a readable value.
+- Keep the existing `Contact Ralph` hero anchor and `#contact` section anchor working.
+
+### Interaction and accessibility
+
+- Email and phone remain direct actions.
+- GitHub and Freelance Business open in a new tab with `noopener noreferrer`.
+- Preserve meaningful accessible labels, visible keyboard focus, readable contrast, reduced-motion support, and comfortable touch targets.
+- Use hover color/underline or another restrained state; do not use card lift, shadow, rounded containers, glass, or decorative motion.
+- Do not add a contact form, testimonials, availability claims, or new personal information.
+
+### Implementation scope
+
+- Expected files: `src/pages/index.astro`, `src/components/ContactLink.astro`, and `src/styles/global.css`.
+- Remove the unused `SectionHeading` import from the page if the new Contact heading no longer uses it; keep the reusable component unless repository inspection proves it is unused and deletion is clearly safe.
+- Do not modify Hero, About, Skills, Projects, header/navigation, footer, project data, or page metadata for this phase.
+
+### Reviewed implementation
+
+- Commit: `9ddd2d2020513ecd52d13898206eca6ee14f9bf6` — `Redesign contact as editorial index`
+- Changed files: `src/components/ContactLink.astro`, `src/pages/index.astro`, and `src/styles/global.css`
+- Review result: approved and locked
+- Confirmed: `04 / Contact` heading language, exact contact links, flat two-column desktop index, mobile-friendly rows, direct email/phone actions, and safe external-link behavior
+- Confirmed: Hero, About, Skills, Projects, header/navigation, footer, project data, page metadata, and the direction file were not changed by the implementation commit
+- Deployment signal: Vercel status passed; no GitHub Actions workflow run was reported for this commit
+- Live review: deployed Contact section rendered the expected heading and four links; light/dark theme colors remained readable; no site runtime errors were observed
+
+## Next phase: Final production audit
+
+Likely remaining work is:
+
 - header/navigation review
 - footer/site-ending treatment if necessary
 - global visual consistency pass
