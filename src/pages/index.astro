@@ -109,16 +109,30 @@ import { skillGroups } from "../data/skills";
 
   <section id="projects" aria-labelledby="projects-heading" class="scroll-mt-28">
     <div class="mx-auto max-w-6xl px-[var(--space-page-x)] py-[var(--space-section-y)] sm:px-6 lg:px-8">
-      <SectionHeading
-        eyebrow="Projects"
-        marker="03"
-        headingId="projects-heading"
-        title="Featured web projects"
-        description="Two portfolio projects centered on practical services: booking management for a resort and a school lost and found experience."
-      />
+      <div class="grid gap-5 md:grid-cols-[12rem_minmax(0,1fr)] md:gap-8 lg:grid-cols-[14rem_minmax(0,1fr)]">
+        <p class="font-mono text-xs font-semibold leading-6 tracking-[0.08em] text-[var(--color-accent)] sm:text-sm">
+          03 / Projects
+        </p>
 
-      <div class="mt-10 grid gap-6 md:grid-cols-2">
-        {projects.map((project) => <ProjectCard project={project} />)}
+        <div class="max-w-3xl">
+          <h2 id="projects-heading" class="text-4xl font-extrabold leading-tight tracking-normal text-[var(--color-text-primary)] sm:text-5xl lg:text-6xl">
+            Selected work shaped around real workflows.
+          </h2>
+          <p class="mt-6 max-w-2xl text-base leading-8 text-[var(--color-text-secondary)] sm:text-lg sm:leading-9">
+            Two web projects built around practical needs: managing resort bookings and making school lost-and-found information easier to organize.
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-12 space-y-12 sm:mt-16 sm:space-y-16">
+        {
+          projects.map((project, index) => (
+            <>
+              {index > 0 && <div class="h-px w-full bg-[var(--color-technical-line)]" aria-hidden="true"></div>}
+              <ProjectCard project={project} />
+            </>
+          ))
+        }
       </div>
     </div>
   </section>
