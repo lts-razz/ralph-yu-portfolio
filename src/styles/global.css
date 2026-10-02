@@ -298,6 +298,50 @@ button {
   color: #60a5fa !important;
 }
 
+.contact-index {
+  border-bottom: 1px solid var(--color-technical-line);
+}
+
+.contact-link {
+  display: flex;
+  min-height: 5rem;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.4rem;
+  border-top: 1px solid var(--color-technical-line);
+  color: var(--color-text-primary);
+  padding: 1.1rem 0;
+  text-decoration: none;
+}
+
+.contact-link__label {
+  color: var(--color-accent);
+  font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.contact-link__value {
+  overflow-wrap: anywhere;
+  color: var(--color-text-primary);
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-weight: 700;
+  line-height: 1.55;
+  text-decoration-color: transparent;
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.22em;
+}
+
+.contact-link:hover .contact-link__value,
+.contact-link:focus-visible .contact-link__value {
+  color: var(--color-accent);
+  text-decoration-color: currentColor;
+}
+
 @media (min-width: 640px) {
   .project-band__actions {
     flex-direction: row;

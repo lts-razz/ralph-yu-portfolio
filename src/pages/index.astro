@@ -2,7 +2,6 @@
 import Layout from "../layouts/Layout.astro";
 import ContactLink from "../components/ContactLink.astro";
 import ProjectCard from "../components/ProjectCard.astro";
-import SectionHeading from "../components/SectionHeading.astro";
 import SkillGroup from "../components/SkillGroup.astro";
 import { projects } from "../data/projects";
 import { skillGroups } from "../data/skills";
@@ -139,15 +138,22 @@ import { skillGroups } from "../data/skills";
 
   <section id="contact" aria-labelledby="contact-heading" class="scroll-mt-28 bg-[var(--color-surface)]">
     <div class="mx-auto max-w-6xl px-[var(--space-page-x)] py-[var(--space-section-y)] sm:px-6 lg:px-8">
-      <SectionHeading
-        eyebrow="Contact"
-        marker="04"
-        headingId="contact-heading"
-        title="Get in touch with Ralph."
-        description="For recruiter conversations, client inquiries, or tech support opportunities, use the links below."
-      />
+      <div class="grid gap-5 md:grid-cols-[12rem_minmax(0,1fr)] md:gap-8 lg:grid-cols-[14rem_minmax(0,1fr)]">
+        <p class="font-mono text-xs font-semibold leading-6 tracking-[0.08em] text-[var(--color-accent)] sm:text-sm">
+          04 / Contact
+        </p>
 
-      <div class="mt-10 grid gap-4 md:grid-cols-3">
+        <div class="max-w-3xl">
+          <h2 id="contact-heading" class="text-4xl font-extrabold leading-tight tracking-normal text-[var(--color-text-primary)] sm:text-5xl lg:text-6xl">
+            Get in touch with Ralph.
+          </h2>
+          <p class="mt-6 max-w-2xl text-base leading-8 text-[var(--color-text-secondary)] sm:text-lg sm:leading-9">
+            For recruiter conversations, client inquiries, or tech support opportunities, use the links below.
+          </p>
+        </div>
+      </div>
+
+      <div class="contact-index mt-10 grid gap-x-10 md:grid-cols-2">
         <ContactLink href="mailto:yuralphjerome@gmail.com" label="Email" value="yuralphjerome@gmail.com" />
         <ContactLink href="tel:09994408356" label="Phone" value="0999-440-8356" />
         <ContactLink
