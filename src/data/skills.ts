@@ -1,16 +1,12 @@
 export type SkillIcon =
   | "javascript"
   | "typescript"
-  | "python"
-  | "cplusplus"
-  | "openjdk"
+  | "astro"
   | "react"
-  | "vite"
   | "tailwindcss"
   | "shadcnui"
   | "heroui"
   | "nodedotjs"
-  | "express"
   | "fastapi"
   | "supabase"
   | "postgresql"
@@ -18,7 +14,6 @@ export type SkillIcon =
   | "mongodb"
   | "git"
   | "github"
-  | "githubactions"
   | "vercel";
 
 export interface Skill {
@@ -30,6 +25,7 @@ export interface Skill {
 
 export interface SkillGroup {
   id: string;
+  number: string;
   title: string;
   skills: Skill[];
 }
@@ -37,6 +33,7 @@ export interface SkillGroup {
 export const skillGroups: SkillGroup[] = [
   {
     id: "languages",
+    number: "01",
     title: "Languages",
     skills: [
       {
@@ -51,41 +48,24 @@ export const skillGroups: SkillGroup[] = [
         color: "#3178c6",
         icon: "typescript",
       },
-      {
-        name: "Python",
-        url: "https://www.python.org/",
-        color: "#3776ab",
-        icon: "python",
-      },
-      {
-        name: "C++",
-        url: "https://isocpp.org/",
-        color: "#00599c",
-        icon: "cplusplus",
-      },
-      {
-        name: "Java",
-        url: "https://dev.java/learn/",
-        color: "#b85c00",
-        icon: "openjdk",
-      },
     ],
   },
   {
-    id: "frontend",
-    title: "Frontend",
+    id: "frontend-web",
+    number: "02",
+    title: "Frontend / Web",
     skills: [
+      {
+        name: "Astro",
+        url: "https://docs.astro.build/",
+        color: "#bc52ee",
+        icon: "astro",
+      },
       {
         name: "React",
         url: "https://react.dev/",
         color: "#087ea4",
         icon: "react",
-      },
-      {
-        name: "Vite",
-        url: "https://vite.dev/guide/",
-        color: "#646cff",
-        icon: "vite",
       },
       {
         name: "Tailwind CSS",
@@ -109,19 +89,14 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     id: "backend-data",
-    title: "Backend and Data",
+    number: "03",
+    title: "Backend / Data",
     skills: [
       {
         name: "Node.js",
         url: "https://nodejs.org/en/docs",
         color: "#339933",
         icon: "nodedotjs",
-      },
-      {
-        name: "Express.js",
-        url: "https://expressjs.com/",
-        color: "#64748b",
-        icon: "express",
       },
       {
         name: "FastAPI",
@@ -157,7 +132,8 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     id: "tools-deployment",
-    title: "Tools and Deployment",
+    number: "04",
+    title: "Tools / Deployment",
     skills: [
       {
         name: "Git",
@@ -170,12 +146,6 @@ export const skillGroups: SkillGroup[] = [
         url: "https://docs.github.com/",
         color: "#6e7681",
         icon: "github",
-      },
-      {
-        name: "GitHub Actions",
-        url: "https://docs.github.com/en/actions",
-        color: "#2088ff",
-        icon: "githubactions",
       },
       {
         name: "Vercel",

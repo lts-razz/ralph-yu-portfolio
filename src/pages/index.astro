@@ -86,15 +86,22 @@ import { skillGroups } from "../data/skills";
 
   <section id="skills" aria-labelledby="skills-heading" class="scroll-mt-28">
     <div class="mx-auto max-w-6xl px-[var(--space-page-x)] py-[var(--space-section-y)] sm:px-6 lg:px-8">
-      <SectionHeading
-        eyebrow="Skills"
-        marker="02"
-        headingId="skills-heading"
-        title="Technical skills Ralph is building with."
-        description="A focused stack for building practical web applications, from typed frontend interfaces to backend services, databases, version control, and deployment."
-      />
+      <div class="grid gap-5 md:grid-cols-[12rem_minmax(0,1fr)] md:gap-8 lg:grid-cols-[14rem_minmax(0,1fr)]">
+        <p class="font-mono text-xs font-semibold leading-6 tracking-[0.08em] text-[var(--color-accent)] sm:text-sm">
+          02 / Skills
+        </p>
 
-      <div class="mt-10 grid gap-6 md:grid-cols-2">
+        <div class="max-w-3xl">
+          <h2 id="skills-heading" class="text-4xl font-extrabold leading-tight tracking-normal text-[var(--color-text-primary)] sm:text-5xl lg:text-6xl">
+            A technical toolkit for building working systems.
+          </h2>
+          <p class="mt-6 max-w-2xl text-base leading-8 text-[var(--color-text-secondary)] sm:text-lg sm:leading-9">
+            Languages, interface tools, data services, and deployment tools organized by their role in the build process.
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-10">
         {skillGroups.map((group) => <SkillGroup group={group} />)}
       </div>
     </div>
